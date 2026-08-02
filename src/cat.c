@@ -26,6 +26,10 @@ main(int argc, char **argv)
         return 1;
     }
 
+    char c;
+    while ((c = fgetc(file)) != EOF)
+        putchar(c);
+
     return 0;
 }
 
