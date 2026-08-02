@@ -2,12 +2,18 @@
 
 #include <stdio.h>
 
+void
+usage()
+{
+    printf("usage: echo <input>\n");
+}
+
 int
 main(int argc, char **argv)
 {
     if (argc < 2)
     {
-        printf("usage: echo <input>\n");
+        usage();
         return 1;
     }
 
