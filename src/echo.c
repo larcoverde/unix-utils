@@ -1,5 +1,6 @@
 // writes input text to standard output
 
+#include <unistd.h>
 #include <stdio.h>
 
 void
@@ -16,9 +17,31 @@ main(int argc, char **argv)
         usage();
         return 1;
     }
+    
+    int opt;
+    int output_nl = 1; //true
 
-    char *input = argv[1];
-    printf("%s\n", input);
+    while ((opt = getopt(argc, argv, "n")) != -1)
+    {
+        switch(opt)
+        {
+            case 'n':
+                output_nl=0; //false
+                break;
+        }
+    }
+
+    if (output_nl == 1)
+    {
+        char *input = argv[1];
+        printf("%s\n", input);
+    }
+
+    else if (output_nl == 0)
+    {
+        char *input = argv[2];
+        printf("%s", input);
+    }
     
     return 0;
 }
