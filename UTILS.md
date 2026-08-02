@@ -2,7 +2,7 @@
 
 list of unix utils i implemented
 
-- [ ] echo
+- [x] echo
 
 - [ ] cat
 
