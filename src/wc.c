@@ -37,6 +37,27 @@ main(int argc, char **argv)
                 break;
         }
     }
+    int c;
+    int byte_count, char_count, lines_count, words_count = 0;
+
+    while((c = getchar()) != EOF)
+    {
+        ++char_count;
+        if (c == '\n')
+            ++lines_count;
+    }
+
+    if (opt_bytes == 1)
+        printf("%d    ", byte_count);
+
+    if (opt_chars == 1)
+        printf("%d    ", char_count);
+
+    if (opt_lines == 1)
+        printf("%d    ", lines_count);
+
+    if (opt_words == 1)
+        printf("%d    ", words_count);
 
     return 0;
 }
