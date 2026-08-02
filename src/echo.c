@@ -14,7 +14,7 @@ help()
 {
     printf("echo - writes input text to standard output\n\n");
     usage();
-    print("             -n    do not output the trailing newline\n\n");
+    printf("             -n    do not output the trailing newline\n\n");
 }
 
 int
@@ -29,10 +29,14 @@ main(int argc, char **argv)
     int opt;
     int output_nl = 1; //true
 
-    while ((opt = getopt(argc, argv, "n")) != -1)
+    while ((opt = getopt(argc, argv, "hn")) != -1)
     {
         switch(opt)
         {
+            case 'h':
+                help();
+                return 0;
+                break;
             case 'n':
                 output_nl=0; //false
                 break;
