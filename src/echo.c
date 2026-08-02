@@ -6,7 +6,7 @@
 void
 usage()
 {
-    printf("usage: echo <input>\n");
+    printf("usage: echo <opt> <input>\n");
 }
 
 int
