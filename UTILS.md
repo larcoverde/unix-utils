@@ -4,7 +4,7 @@ list of unix utils i implemented
 
 - [x] echo
 
-- [ ] cat
+- [x] cat
 
 - [ ] wc
 
