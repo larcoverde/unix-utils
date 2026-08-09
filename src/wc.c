@@ -69,14 +69,15 @@ main(int argc, char **argv)
     if (opt_bytes == 1)
         printf("%d    ", byte_count);
 
-    if (opt_chars == 1)
-        printf("%d    ", char_count);
-
     if (opt_lines == 1)
         printf("%d    ", lines_count);
 
     if (opt_words == 1)
         printf("%d    ", words_count);
+
+    if (opt_chars == 1)
+        printf("%d    ", char_count);
+
     printf("\n");
 
     return 0;
