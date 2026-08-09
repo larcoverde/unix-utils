@@ -3,6 +3,9 @@
 #include<unistd.h>
 #include<stdio.h>
 
+#define IN  1 // inside a word
+#define OUT 0 // outside a word
+
 void
 usage()
 {
@@ -38,13 +41,23 @@ main(int argc, char **argv)
         }
     }
     int c;
+    int state;
     int byte_count, char_count, lines_count, words_count = 0;
+
+    state = OUT;
 
     while((c = getchar()) != EOF)
     {
         ++char_count;
         if (c == '\n')
             ++lines_count;
+        if (c == ' ' || c == '\n' || c == '\t')
+            state = OUT;
+        else if (state == OUT)
+        {
+            state = IN;
+            ++words_count;
+        }
     }
 
     if (opt_bytes == 1)
