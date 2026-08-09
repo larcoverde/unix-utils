@@ -40,6 +40,12 @@ main(int argc, char **argv)
                 break;
         }
     }
+
+    if (argc == 1)
+    {
+        opt_chars = opt_lines = opt_words = 1;
+    }
+
     int c;
     int state;
     int byte_count, char_count, lines_count, words_count = 0;
@@ -71,6 +77,7 @@ main(int argc, char **argv)
 
     if (opt_words == 1)
         printf("%d    ", words_count);
+    printf("\n");
 
     return 0;
 }
