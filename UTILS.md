@@ -6,7 +6,7 @@ list of unix utils i implemented
 
 - [x] cat
 
-- [ ] wc
+- [x] wc
 
 - [ ] head
 
